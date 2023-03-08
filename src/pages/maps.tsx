@@ -17,8 +17,8 @@ interface MapProps extends google.maps.MapOptions {
   onIdle?: (map: google.maps.Map) => void;
   children?: React.ReactNode;
 }
-const deepCompareEqualsForMaps: any = createCustomEqual(
-  (deepEqual: any) => (a: any, b: any) => {
+const deepCompareEqualsForMaps: any = createCustomEqual<any>({
+  isEqual: (a: any, b: any, deepEqual: (a: any, b: any) => boolean) => {
     if (
       isLatLngLiteral(a) ||
       a instanceof google.maps.LatLng ||
@@ -32,8 +32,9 @@ const deepCompareEqualsForMaps: any = createCustomEqual(
 
     // use fast-equals for other objects
     return deepEqual(a, b);
-  }
-);
+  },
+} as CustomEqualCreatorOptions<any>);
+
 const useDeepCompareMemoize = (value: any) => {
   const ref = useRef();
 
