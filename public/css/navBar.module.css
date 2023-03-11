@@ -1,0 +1,21 @@
+.navBar:hover .navList {
+  transform: scaleY(1);
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.navBar {
+  height: 100%;
+}
+.navList {
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: transform 0.6s ease;
+  border-radius: 0px 0px 8px 8px;
+  width: 100%;
+}
+
+.link:hover {
+  color: #defaea;
+}

@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "GenSenRounded-B";
+  font-weight: 700;
+  font-display: swap;
+  src: local("GenSenRounded-B"),
+    url("../../public/fonts/GenSenRounded-B.ttc") format("truetype");
+}
+
+@font-face {
+  font-family: "GenSenRounded-EL";
+  font-weight: 200;
+  font-display: swap;
+  src: local("GenSenRounded-EL"),
+    url("../../public/fonts/GenSenRounded-EL.ttc") format("truetype");
+}
+
+@font-face {
+  font-family: "GenSenRounded-H";
+  font-weight: 900;
+  font-display: swap;
+  src: local("GenSenRounded-H"),
+    url("../../public/fonts/GenSenRounded-H.ttc") format("truetype");
+}
+@font-face {
+  font-family: "GenSenRounded-L";
+  font-weight: 300;
+  font-display: swap;
+  src: local("GenSenRounded-L"),
+    url("../../public/fonts/GenSenRounded-L.ttc") format("truetype");
+}
+@font-face {
+  font-family: "GenSenRounded-M";
+  font-weight: 500;
+  font-display: swap;
+  src: local("GenSenRounded-M"),
+    url("../../public/fonts/GenSenRounded-M.ttc") format("truetype");
+}
+@font-face {
+  font-family: "GenSenRounded-R";
+  font-weight: 400;
+  font-display: swap;
+  src: local("GenSenRounded-R"),
+    url("../../public/fonts/GenSenRounded-R.ttc") format("truetype");
+}
+
+body {
+  font-family: "gensen-rounded", sans-serif;
+  /* font-weight: bold; */
+}

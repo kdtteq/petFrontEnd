@@ -12,9 +12,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page);
 
   return getLayout(
-    <>
+    <div className="font-gensen-rounded">
       <Component {...pageProps}></Component>
-    </>
+    </div>
   );
 }
 
