@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { NavListProps } from "@/types/navBarType";
 import styles from "../../../public/css/navBar.module.css";
 import Link from "next/link";
@@ -18,7 +17,7 @@ export default function NavList({ btnName, listOptions }: NavListProps) {
             return (
               <div key={index} className={`px-5 mt-[10px] ${styles.link}`}>
                 <div>
-                  <Link href={`/`}>{data}</Link>
+                  <Link href={`${data.link}/rescue`}>{data.title}</Link>
                 </div>
               </div>
             );

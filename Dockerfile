@@ -42,20 +42,24 @@
 # CMD ["yarn", "start"]
 
 
-FROM --platform=linux/amd64 node:16
+# FROM --platform=linux/amd64 node:16
+FROM  node:16-alpine as install
 
 WORKDIR /app
 
-ENV PORT 3000
-
 COPY ./package.json ./yarn.lock /app/
-RUN yarn install 
-RUN npm install
+RUN yarn install --Production
+RUN npm install --Production
+COPY . .
 
-COPY . /app
-
+FROM  node:16-alpine as build
+WORKDIR /app
+COPY --from=install /app . 
 RUN yarn run build
 
-EXPOSE 3000
 
+FROM  node:16-alpine as launch
+WORKDIR /app
+COPY --from=build /app . 
+EXPOSE 3000
 CMD ["yarn", "start"]
