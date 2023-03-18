@@ -8,6 +8,7 @@ export interface PetFormState {
   map: { lat: number; lng: number };
   chineseLocation: string;
   isMapShow: boolean;
+  cityName: string;
 }
 
 export interface PetFormAction {

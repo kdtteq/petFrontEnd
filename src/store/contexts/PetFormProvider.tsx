@@ -11,6 +11,7 @@ export const initialState: PetFormState = {
   map: { lat: 0, lng: 0 },
   chineseLocation: "",
   isMapShow: false,
+  cityName: "",
 };
 export const PetFormProvider = ({
   children,

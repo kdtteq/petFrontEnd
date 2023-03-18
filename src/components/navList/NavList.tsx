@@ -5,8 +5,10 @@ import Link from "next/link";
 
 export default function NavList({ btnName, listOptions }: NavListProps) {
   return (
-    <li className={`cursor-pointer w-full ${styles.navBar} text-[22px]`}>
-      <div className={`pl-5 h-full leading-[65px] bg-[#5DAC81] ${styles.btn}`}>
+    <li className={`cursor-pointer ${styles.navBar} text-[1.52vw] w-[16vw]`}>
+      <div
+        className={`pl-5 h-full leading-[65px] bg-[#5DAC81] truncate ${styles.navBar}`}
+      >
         {btnName}
       </div>
       <div
@@ -16,8 +18,8 @@ export default function NavList({ btnName, listOptions }: NavListProps) {
           listOptions.map((data, index) => {
             return (
               <div key={index} className={`px-5 mt-[10px] ${styles.link}`}>
-                <div>
-                  <Link href={`${data.link}/rescue`}>{data.title}</Link>
+                <div className="truncate">
+                  <Link href={`${data.link}`}>{data.title}</Link>
                 </div>
               </div>
             );

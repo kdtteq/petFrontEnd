@@ -177,9 +177,17 @@ const GoogleMap = () => {
           return res.json();
         })
         .then((response) => {
+          const cityNameIndex = response.results.length - 4;
+          console.log("response", response);
           petDispatch({
             type: "chineseLocation",
             payload: { value: response.results[0].formatted_address },
+          });
+          petDispatch({
+            type: "cityName",
+            payload: {
+              value: `${response.results[cityNameIndex].address_components[1].long_name}, ${response.results[cityNameIndex].address_components[0].long_name}`,
+            },
           });
         })
         .catch((err) => {

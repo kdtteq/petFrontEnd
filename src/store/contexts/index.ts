@@ -16,6 +16,7 @@ export const DropDownContext = createContext<DropDownContextType>({
 
 export const PetFormContext = createContext<PetFormContextType>({
   petState: {
+    cityName: "",
     type: "",
     size: "",
     color: "",

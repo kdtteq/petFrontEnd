@@ -31,6 +31,7 @@ export default function DogRescue() {
   const infoInputRef = useRef<HTMLInputElement>(null);
   const { dropDownState, dropDownDispatch } = useContext(DropDownContext);
   const { petState, petDispatch } = useContext(PetFormContext);
+  console.log("petState", petState);
   const [loadingBar, setLoadingBar] = useState<boolean>(false);
   const [picFileName, setPicFileName] = useState<string>("");
 
@@ -72,6 +73,8 @@ export default function DogRescue() {
     formData.append("color", petState.color);
     formData.append("size", petState.size);
     formData.append("coordinate", JSON.stringify(petState.map));
+    formData.append("shelter_location", petState.cityName);
+    formData.append("last_known_location", petState.chineseLocation);
     if (petState.pic) {
       formData.append("image_file", petState.pic);
     }
@@ -96,7 +99,7 @@ export default function DogRescue() {
     <div className="text-[1.39vw] text-[#3A3A3A]">
       <Header />
       <NavBar />
-      <div className="w-full flex justify-center">
+      <main className="w-full flex justify-center">
         <div className="flex w-[88vw] justify-between py-[8vw]">
           <form className="w-[38.4vw] max-w-[38.4vw] shrink-0 rounded-[50px] border-[5px] border-[#5DAC81] border-dashed p-8 relative">
             <div className="text-[3.61vw]">救援回報</div>
@@ -178,11 +181,7 @@ export default function DogRescue() {
                 >
                   <div className="flex justify-between items-center w-full min-h-[45px]">
                     <div>其他補充內容</div>
-                    {/* <div className="truncate max-w-[40%] text-[18px] font-light tracking-tight text-[#3A3A3A]/[.6]">
-                      {petState.content}
-                    </div> */}
                   </div>
-                  {/* <div className="border">{infoInputRef.current?.value}</div> */}
                 </div>
                 <div
                   className={`outline-none cursor-text caret-[#A8D8B9] w-full ${
@@ -196,7 +195,7 @@ export default function DogRescue() {
               {/* 確認按鈕 */}
               <div className="w-full flex justify-center mt-[2vw]">
                 <div
-                  className={` w-[8vw] h-[8vw] border-[3px] border-rose-900 cursor-pointer bg-[#A8D8B9] rounded-[50%] flex justify-center items-center`}
+                  className={` w-[8vw] h-[8vw] border-[3px] cursor-pointer bg-[#A8D8B9] rounded-[50%] flex justify-center items-center`}
                   onClick={handleUpload}
                 >
                   確認送出
@@ -204,6 +203,8 @@ export default function DogRescue() {
               </div>
             </div>
           </form>
+
+          {/* Google地圖 */}
           <div className="w-[40vw] relative">
             <div
               className={`w-[40vw] h-[53.26vw] absolute ${
@@ -213,7 +214,7 @@ export default function DogRescue() {
               <GoogleMap />
             </div>
             <Image
-              src="/images/貓狗.png"
+              src="/images/rescue/background_pic.png"
               alt="貓狗"
               fill
               sizes="(max-width:768px) 40vw,
@@ -223,7 +224,7 @@ export default function DogRescue() {
             />
           </div>
         </div>
-      </div>
+      </main>
       {/* 轉圈圈動畫 */}
       <div
         className={`bg-[#3A3A3A]/[.06] w-full h-full ${

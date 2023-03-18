@@ -40,6 +40,11 @@ export const petFormReducer = (
         ...state,
         chineseLocation: action.payload!.value,
       };
+    case "cityName":
+      return {
+        ...state,
+        cityName: action.payload!.value,
+      };
     case "isMapShow":
       return {
         ...state,

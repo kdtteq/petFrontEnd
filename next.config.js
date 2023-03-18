@@ -3,9 +3,11 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  cssGlobal: ["/css/*.css"],
   babel: {
     plugins: ["macros"],
+  },
+  images: {
+    domains: ["encrypted-tbn0.gstatic.com", "i.imgur.com"],
   },
   webpack(config) {
     config.module.rules.push({
