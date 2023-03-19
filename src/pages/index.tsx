@@ -160,6 +160,7 @@ export default function Index() {
                     className="object-cover"
                     priority={true}
                     sizes=""
+                    onError={() => console.log("cat_pic2_Failed")}
                   />
                 </div>
                 <div className="w-full h-[50%] rounded-[50%] -mt-[50px] z-10 relative bg-white flex justify-center items-center">
