@@ -5,8 +5,7 @@ import Header from "@/components/header/Header";
 import NavBar from "@/components/navBar";
 import Footer from "@/components/footer";
 import Button from "@/components/index/Button";
-import dynamic from "next/dynamic";
-const Image = dynamic(() => import("next/image"), { ssr: false });
+import Image from "next/image";
 
 const button = [
   {

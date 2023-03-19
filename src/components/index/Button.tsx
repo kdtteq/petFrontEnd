@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import Image from "next/image";
+
 import { ButtonProps } from "@/types/indexButtonType";
-const Image = dynamic(() => import("next/image"), { ssr: false });
 
 export default function Button({ link, image, content, alt }: ButtonProps) {
   return (

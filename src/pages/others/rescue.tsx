@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import { DropDownContext } from "@/store/contexts";
 import { PetFormContext } from "@/store/contexts";
-import dynamic from "next/dynamic";
 import Header from "@/components/header/Header";
 import NavBar from "@/components/navBar";
 import Footer from "@/components/footer";
 import DropDown from "@/components/dropDown";
 import { useRef, useState, useEffect } from "react";
 import roller from "../../../public/css/roller.module.css";
+import Image from "next/image";
+import GoogleMap from "@/components/googleMap";
 
-const GoogleMap = dynamic(() => import("@/components/googleMap"), {
-  ssr: false,
-});
-const Image = dynamic(() => import("next/image"), { ssr: false });
+// const GoogleMap = dynamic(() => import("@/components/googleMap"), {
+//   ssr: false,
+// });
 
 const typeOptions: string[] = ["狗狗", "貓貓", "其他"];
 const sizeOptions: string[] = ["小型", "中型", "大型"];
