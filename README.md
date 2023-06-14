@@ -1,6 +1,6 @@
 # PetHelp Solutions
 
-[作品展示連結](https://pethelp.solutions/)
+<!-- [作品展示連結](https://pethelp.solutions/) -->
 
 ## PetHelp Solutions 是一個提供即時回報動物救援相關資訊的平台<br>使用 Next.js、Tailwindcss 和 Google Map API 技術開發。
 
